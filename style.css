@@ -1,0 +1,108 @@
+html,body,.container{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background: url(https://images.unsplash.com/photo-1597200381847-30ec200eeb9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.164);
+    z-index: 1;
+}
+
+.search input{
+    margin: 30px;
+    /* add transition */
+    z-index: 10;
+}
+
+.content{
+    flex: 1 1 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.info{
+    width: 700px;
+    height: 400px;
+    margin: 0px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.meteoInfo{
+    flex: 1 1 100%;
+    display: flex;
+}
+
+.temp{
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 50px;
+}
+
+.statics{
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-left: 2px solid white;
+}
+
+.clima{
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem;
+    padding-left: 0.3rem;
+}
+
+
+.citta{
+    font-size: 4rem;
+    line-height: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+}
+
+.temper{
+    font-size: 15rem;
+    font-weight: 900;
+    position: relative;
+}
+
+.temperaturaC{
+    font-size: 3rem;
+    position: absolute;
+    top: 20px;
+}
+
+
+.fells, .wind, .humidity{
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    padding-left: 50px;
+}
+
+
