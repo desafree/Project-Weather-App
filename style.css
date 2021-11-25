@@ -9,11 +9,8 @@ html,body,.container{
 .container {
     display: flex;
     flex-direction: column;
-    background: url(https://images.unsplash.com/photo-1597200381847-30ec200eeb9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: linear-gradient(#0093E9, #80D0C7);
+
 }
 
 .search {
@@ -58,6 +55,7 @@ html,body,.container{
     align-items: center;
     justify-content: center;
     padding-right: 50px;
+    flex-direction: column;
 }
 
 .statics{
@@ -89,12 +87,13 @@ html,body,.container{
     font-size: 15rem;
     font-weight: 900;
     position: relative;
+    line-height: 170px;
 }
 
 .temperaturaC{
     font-size: 3rem;
-    position: absolute;
-    top: 20px;
+
+
 }
 
 
@@ -106,3 +105,80 @@ html,body,.container{
 }
 
 
+.conten{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+ /* The switch - the box around the slider */
+ .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: orange;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #FFE53B;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #FFE53B;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+
+  .F, .C{
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+  }
