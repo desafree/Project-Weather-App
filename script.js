@@ -4,7 +4,9 @@ let meteoCity;
 //fetch Meteo data
 async function startMeteoApi(city) {
     try {
-    const apiResponse = await fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID=f85db4f81e9fe36af88d71da420865f0', {mode: 'cors'});
+    loadingScreen()
+    const apiResponse = await  fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID=f85db4f81e9fe36af88d71da420865f0', {mode: 'cors'});
+    removeLoading()
     if(!apiResponse.ok)
     {
         console.error('Error status code')
@@ -24,13 +26,12 @@ async function startMeteoApi(city) {
 }
 
 startMeteoApi('Bergamo')
-
-const input = document.querySelector('input')
+const search = document.querySelector('.search')
+const input = document.querySelector('.city')
 input.addEventListener('keyup', (text)=>{
     if(event.keyCode === 13){
-        console.log(text.target.value)
         startMeteoApi(text.target.value)
-        input.textContent = ''
+        input.value = ''
         
     }
     
@@ -109,6 +110,11 @@ function displayItem() {
         const unityDefault = document.createElement('sup')
         unityDefault.textContent = '℃'
         fell.appendChild(unityDefault)
+
+        const Cclass = document.querySelector('.C')
+        Cclass.style.color = 'white'
+        const Fclass = document.querySelector('.F')
+        Fclass.style.color = 'black'
     }
     else{
         const temp = document.querySelector('.temper')
@@ -123,6 +129,11 @@ function displayItem() {
         const unityDefault = document.createElement('sup')
         unityDefault.textContent = '°F'
         fell.appendChild(unityDefault) 
+
+        const Cclass = document.querySelector('.C')
+        Cclass.style.color = 'black'
+        const Fclass = document.querySelector('.F')
+        Fclass.style.color = 'white'
     }
 
     const clima = document.querySelector('.clima');
@@ -166,4 +177,16 @@ function selectImg(description) {
         container.style.background = 'linear-gradient(#F3F9FF, #CDCDCD)'
     }
     
+}
+
+function loadingScreen() {
+    const loader = document.createElement('div')
+    loader.classList.add('loader');
+    const body = document.querySelector('.search')
+    body.appendChild(loader)
+}
+
+function removeLoading() {
+    const loader2 = document.querySelector('.loader')
+    loader2.remove()
 }
